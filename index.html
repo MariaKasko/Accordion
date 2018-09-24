@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Maria's Accordion</title>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+	 <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+	crossorigin="anonymous">
+	</script>
+</head>
+
+<body>
+	<style>
+		.heading {
+			background-color: #ccc;
+			display: block;
+			cursor: pointer;
+			padding: 18px;
+			width: 100%;
+			border: none;
+			text-align: left;
+		}
+
+		
+		.heading:hover{
+		background-color:#eee;
+		}
+
+		.panel {
+			padding: 0 18px;
+			display: none;
+			background-color: white;
+
+		}
+
+		img {
+			width: 100%;
+		}
+	</style>
+	<div id="accordion">
+
+		<h2 class="heading" onclick="open">What is healthy diet</h2>
+		<div class="panel">
+			<p>Eating a healthy diet doesn’t have to be overly complicated. While some specific foods or nutrients have been shown to
+				have a beneficial effect on mood, it’s your overall dietary pattern that is most important. The cornerstone of a healthy
+				diet pattern should be to replace processed food with real food whenever possible. Eating food that is as close as possible
+				to the way nature made it can make a huge difference to the way you think, look, and feel.</p>
+		</div>
+
+		<h2 class="heading" onclick="open">The Healthy Eating Pyramid</h2>
+		<div class="panel">
+			<img src="food-pyramid.jpeg" alt="Food Pyramid"></img>
+		</div>
+
+		<h2 class="heading" onclick="open">The fundamentals of healthy eating</h2>
+		<div class="panel">
+			<p>While some extreme diets may suggest otherwise, we all need a balance of protein, fat, carbohydrates, fiber, vitamins,
+				and minerals in our diets to sustain a healthy body. You don’t need to eliminate certain categories of food from your
+				diet, but rather select the healthiest options from each category.</p>
+		</div>
+
+		<script>
+			$(document).ready(function($){
+          $('#accordion').find('.heading').click(function(){
+            $(this).next().slideToggle('fast');
+            $(".panel").not($(this).next()).slideUp('fast');
+          })
+        })
+		</script>
+	</div>
+</body>
+</html>
